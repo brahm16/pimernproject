@@ -1,22 +1,22 @@
-const Places=()=>{
-    const style1 = {
-        backgroundImage: "url('img/prevnap2.jpg')",
-      };
-      const style2 = {
-        backgroundImage: "url('img/prevnap2.jpg')",
-      };
-      
-    return(
-        <>
-     <div className="breadcrumbs">
+import React, { Component } from 'react'
+
+export default class Events extends Component {
+    render() {
+        const style2 = {
+            backgroundImage: "url('img/prevnap2.jpg')",
+          };
+        return (
+            <>
+            <div className="breadcrumbs">
     <div className="wrap">
         <div className="wrap_float">
             <a href="#">Home</a>
             <span className="separator">/</span>
-            <a href="#" className="current">Blog Full Right Sidebar</a>
+            <a href="#" className="current">Blog 2 Columns Right Sidebar</a>
         </div>
     </div>
 </div>
+<div className="image_bg--single" style={style2}></div>
 <div className="page_content blog-page">
     <div className="wrap">
         <div className="wrap_float">
@@ -24,7 +24,7 @@ const Places=()=>{
                 Blog 2 Columns Right Sidebar
             </div>
             <div className="main">
-                <div className="blog-list">
+                <div className="blog-list two-colums">
                     <a href="blog-single.html" className="blog-item">
                         <div className="_img" style={style2}>
                             <div className="sq_parent">
@@ -92,6 +92,75 @@ const Places=()=>{
                             A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
                         </div>
                     </a>
+                    
+                    <a href="blog-single.html" className="blog-item">
+                        <div className="_img" style={style2}>
+                            <div className="sq_parent">
+                               <div className="sq_wrap">
+                                   <div className="sq_content"></div>
+                               </div>
+                            </div>
+                        </div>
+                        <div className="_date">JUNE 6/2019 | UNCATEGORIZED</div>
+                        <div className="_title">
+                            Pack wisely before traveling
+                        </div>
+                        <div className="_text">
+                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+                        </div>
+                    </a>
+                    
+                    <a href="blog-single.html" className="blog-item">
+                        <div className="_img" style={style2}>
+                            <div className="sq_parent">
+                               <div className="sq_wrap">
+                                   <div className="sq_content"></div>
+                               </div>
+                            </div>
+                        </div>
+                        <div className="_date">JUNE 6/2019 | UNCATEGORIZED</div>
+                        <div className="_title">
+                            Pack wisely before traveling
+                        </div>
+                        <div className="_text">
+                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+                        </div>
+                    </a>
+                    
+                    <a href="blog-single.html" className="blog-item">
+                        <div className="_img" style={style2}>
+                            <div className="sq_parent">
+                               <div className="sq_wrap">
+                                   <div className="sq_content"></div>
+                               </div>
+                            </div>
+                        </div>
+                        <div className="_date">JUNE 6/2019 | UNCATEGORIZED</div>
+                        <div className="_title">
+                            Pack wisely before traveling
+                        </div>
+                        <div className="_text">
+                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+                        </div>
+                    </a>
+                    
+                    <a href="blog-single.html" className="blog-item">
+                        <div className="_img" style={style2}>
+                            <div className="sq_parent">
+                               <div className="sq_wrap">
+                                   <div className="sq_content"></div>
+                               </div>
+                            </div>
+                        </div>
+                        <div className="_date">JUNE 6/2019 | UNCATEGORIZED</div>
+                        <div className="_title">
+                            Pack wisely before traveling
+                        </div>
+                        <div className="_text">
+                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+                        </div>
+                    </a>
+                    
                 </div>
                 <div className="pagination">
                     <ul>
@@ -170,7 +239,7 @@ const Places=()=>{
                         </li>
                     </ul>
                 </div>
-                <div className="text_widget" style={style2}>
+                <div className="text_widget" style={{backgroundColor: "#222B46"}}>
                     <div className="_title">
                         Text Widget
                     </div>
@@ -183,83 +252,83 @@ const Places=()=>{
                         Recent photo
                     </div>
                     <div className="photos">
-                        <a href="#" className="item">
+                        <a href="gallery.html" className="item">
                             <div className="sq_parent">
                                <div className="sq_wrap">
                                    <div className="sq_content">
-                                       <img src="img/gal-1.jpg" alt="" />
+                                       <img src="img/gal-1.jpg" alt=""/>
                                    </div>
                                </div>
                             </div>
                         </a>
-                        <a href="#" className="item">
+                        <a href="gallery.html" className="item">
                             <div className="sq_parent">
                                <div className="sq_wrap">
                                    <div className="sq_content">
-                                       <img src="img/gal-2.jpg" alt="" />
+                                       <img src="img/gal-2.jpg" alt=""/>
                                    </div>
                                </div>
                             </div>
                         </a>
-                        <a href="#" className="item">
+                        <a href="gallery.html" className="item">
                             <div className="sq_parent">
                                <div className="sq_wrap">
                                    <div className="sq_content">
-                                       <img src="img/gal-3.jpg" alt="" />
+                                       <img src="img/gal-3.jpg" alt=""/>
                                    </div>
                                </div>
                             </div>
                         </a>
-                        <a href="#" className="item">
+                        <a href="gallery.html" className="item">
                             <div className="sq_parent">
                                <div className="sq_wrap">
                                    <div className="sq_content">
-                                       <img src="img/gal-4.jpg" alt="" />
+                                       <img src="img/gal-4.jpg" alt=""/>
                                    </div>
                                </div>
                             </div>
                         </a>
-                        <a href="#" className="item">
+                        <a href="gallery.html" className="item">
                             <div className="sq_parent">
                                <div className="sq_wrap">
                                    <div className="sq_content">
-                                       <img src="img/gal-5.jpg" alt="" />
+                                       <img src="img/gal-5.jpg" alt=""/>
                                    </div>
                                </div>
                             </div>
                         </a>
-                        <a href="#" className="item">
+                        <a href="gallery.html" className="item">
                             <div className="sq_parent">
                                <div className="sq_wrap">
                                    <div className="sq_content">
-                                       <img src="img/gal-6.jpg" alt="" />
+                                       <img src="img/gal-6.jpg" alt=""/>
                                    </div>
                                </div>
                             </div>
                         </a>
-                        <a href="#" className="item">
+                        <a href="gallery.html" className="item">
                             <div className="sq_parent">
                                <div className="sq_wrap">
                                    <div className="sq_content">
-                                       <img src="img/gal-7.jpg" alt="" />
+                                       <img src="img/gal-7.jpg" alt=""/>
                                    </div>
                                </div>
                             </div>
                         </a>
-                        <a href="#" className="item">
+                        <a href="gallery.html" className="item">
                             <div className="sq_parent">
                                <div className="sq_wrap">
                                    <div className="sq_content">
-                                       <img src="img/gal-8.jpg" alt="" />
+                                       <img src="img/gal-8.jpg" alt=""/>
                                    </div>
                                </div>
                             </div>
                         </a>
-                        <a href="#" className="item">
+                        <a href="gallery.html" className="item">
                             <div className="sq_parent">
                                <div className="sq_wrap">
                                    <div className="sq_content">
-                                       <img src="img/gal-9.jpg" alt="" />
+                                       <img src="img/gal-9.jpg" alt=""/>
                                    </div>
                                </div>
                             </div>
@@ -270,9 +339,7 @@ const Places=()=>{
         </div>
     </div>
 </div>
-
-        </>
-    )
+            </>
+        )
+    }
 }
-
-export default Places;

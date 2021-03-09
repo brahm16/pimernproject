@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom"
+
 const MainLanding=()=>{
     const style={
       
@@ -85,30 +87,30 @@ const MainLanding=()=>{
                                     </div>
                                     <div className="_title"><span>Excursions</span></div>
                                 </a>
-                                <a href="single.html" className="categories_item">
+                                <a  className="categories_item">
                                     <div className="icon">
                                         <div className="icon-wrap">
                                             <img src="img/nap2.jpg" alt="" className="image-cover" />
                                         </div>
                                     </div>
-                                    <div className="_title"><span>Events</span></div>
+                                    <div className="_title"><span><NavLink to="events">Events</NavLink></span></div>
                                 </a>
-                                <a href="single.html" className="categories_item">
+                                <a  className="categories_item">
                                     <div className="icon">
                                         <div className="icon-wrap">
                                             <img src="img/nap3.jpg" alt="" className="image-cover" />
                                         </div>
 
                                     </div>
-                                    <div className="_title"><span>Online store</span></div>
+                                    <div className="_title"><span><NavLink to="stores">Online Store</NavLink></span></div>
                                 </a>
-                                <a href="single.html" className="categories_item">
+                                <a  className="categories_item">
                                     <div className="icon">
                                         <div className="icon-wrap">
                                             <img src="img/nap4.jpg" alt="" className="image-cover" />
                                         </div>
                                     </div>
-                                    <div className="_title"><span>Gastronomy</span></div>
+                                    <div className="_title"><span><NavLink to="gastronomy">Gastronomy</NavLink></span></div>
                                 </a>
                             </div>
                             

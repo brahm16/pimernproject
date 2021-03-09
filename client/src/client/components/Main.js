@@ -8,6 +8,13 @@ import Services from './pages/Services'
 import About from './pages/About'
 import Footer from './Footer';
 import Header from './Header';
+import Gastronomy from './items/Gastronomy'
+import Events from './items/Events'
+import Execursions from './items/Excursions'
+import VirtualTour from './items/VirtualTour'
+import OnlineStore from './items/OnlineStore'
+
+
 
 
 class Main extends Component {
@@ -30,6 +37,13 @@ class Main extends Component {
             <Route path='/login' component={Login} />
             <Route path='/places' component={Places} />
             <Route path='/services' component={Services} />
+            <Route path='/gastronomy' component={Gastronomy} />
+            <Route path='/events' component={Events} />
+            <Route path='/execursions' component={Execursions} />
+            <Route path='/vtour' component={VirtualTour} />
+            <Route path='/stores' component={OnlineStore} />
+
+
             </Switch>
             <Footer />
 
