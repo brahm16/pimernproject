@@ -1,10 +1,58 @@
-import { NavLink } from 'react-router-dom';
+import React, { Component } from "react";
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+} from "reactstrap";
 
+import { NavLink } from "react-router-dom";
+import Search from "./Search";
 
-const Header=()=>{
+class Header extends Component {
+  
 
-    return(
-        <div className="header">
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isModalOpen: false,
+      isModalSearchOpen: false,
+    };
+    this.toggleModal = this.toggleModal.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.toggleSearchModal = this.toggleSearchModal.bind(this);
+  }
+  toggleModal() {
+    this.setState({
+      isModalOpen: !this.state.isModalOpen,
+    });
+  }
+  toggleSearchModal() {
+    this.setState({
+      isModalSearchOpen: !this.state.isModalSearchOpen,
+    });
+    console.log("tbadlet "+this.state.isModalSearchOpen);
+  }
+  handleLogin(event) {
+    this.toggleModal();
+    alert(
+      "Username: " +
+        this.username.value +
+        " Password: " +
+        this.password.value +
+        " Remember: " +
+        this.remember.checked
+    );
+    event.preventDefault();
+  }
+  render() {
+    return (
+      <div className="header">
         <div className="wrap">
           <div className="wrap_float">
             <div className="header__top">
@@ -22,9 +70,60 @@ const Header=()=>{
               </div>
             </div>
             <div className="header__bottom">
-            <div class="logo"><NavLink   to='/home'> Zaghouan</NavLink></div>
-
-            
+              <div class="logo">
+                <NavLink to="/home">
+                  {" "}
+                  <span className="my-title">Zaghouan</span>
+                </NavLink>
+              </div>
+              <Modal
+                isOpen={this.state.isModalSearchOpen}
+                toggle={this.toggleSearchModal}
+                fullscreen={'xl'}
+              >
+                <ModalHeader toggle={this.toggleSearchModal}></ModalHeader>
+                <ModalBody>
+                  <Search />
+                </ModalBody>
+              </Modal>
+              <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
+                <ModalBody>
+                  <Form onSubmit={this.handleLogin}>
+                    <FormGroup>
+                      <Label htmlFor="username">Username</Label>
+                      <Input
+                        type="text"
+                        id="username"
+                        name="username"
+                        innerRef={(input) => (this.username = input)}
+                      />
+                    </FormGroup>
+                    <FormGroup>
+                      <Label htmlFor="password">Password</Label>
+                      <Input
+                        type="password"
+                        id="password"
+                        name="password"
+                        innerRef={(input) => (this.password = input)}
+                      />
+                    </FormGroup>
+                    <FormGroup check>
+                      <Label check>
+                        <Input
+                          type="checkbox"
+                          name="remember"
+                          innerRef={(input) => (this.remember = input)}
+                        />
+                        Remember me
+                      </Label>
+                    </FormGroup>
+                    <Button type="submit" value="submit" color="primary">
+                      Login
+                    </Button>
+                  </Form>
+                </ModalBody>
+              </Modal>
 
               <div className="menu" id="js-menu">
                 <div className="close"></div>
@@ -33,30 +132,24 @@ const Header=()=>{
                   <div className="scroll_wrap">
                     <ul>
                       <li>
-                          <NavLink   to='/home'> Home</NavLink>
+                        <NavLink to="/home"> Home</NavLink>
                       </li>
                       <li className="dropdown_li">
-                      <NavLink   to='/about'> About</NavLink>
-
-                      
+                        <NavLink to="/about"> About</NavLink>
                       </li>
                       <li className="dropdown_li">
-                      <NavLink   to='/services'>Services</NavLink>
-
-                       
+                        <NavLink to="/services">Services</NavLink>
                       </li>
                       <li className="dropdown_li">
-                      <NavLink   to='/places'>Destination</NavLink>
+                        <NavLink to="/places">Destination</NavLink>
                       </li>
                       <li className="dropdown_li">
                         <NavLink to="/contact">Contact</NavLink>
-                       
                       </li>
                       <li className="dropdown_li">
-                        <a href="blog-list.html">
+                        <a onClick={this.toggleModal}>
                           <span>Login</span>
                         </a>
-                      
                       </li>
                     </ul>
                   </div>
@@ -78,7 +171,11 @@ const Header=()=>{
                   </div>
                 </div>
               </div>
-              <div className="search_link" id="search_link"></div>
+              <div
+                className="search_link"
+                onClick={this.toggleSearchModal}
+                id="search_link"
+              ></div>
               <div className="mobile_btn" id="mobile_btn">
                 <span></span>
                 <span></span>
@@ -88,10 +185,8 @@ const Header=()=>{
           </div>
         </div>
       </div>
-
     );
-
-
+  }
 }
 
 export default Header;

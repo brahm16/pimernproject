@@ -13,6 +13,8 @@ import Events from './items/Events'
 import Execursions from './items/Excursions'
 import VirtualTour from './items/VirtualTour'
 import OnlineStore from './items/OnlineStore'
+import MenuCircuit from './circuits/MenuCircuit'
+
 
 
 
@@ -26,7 +28,7 @@ class Main extends Component {
             );
           }
         return (
-            <div className="container">
+            <div >
             <Header />
 
             <Switch>
@@ -42,6 +44,7 @@ class Main extends Component {
             <Route path='/execursions' component={Execursions} />
             <Route path='/vtour' component={VirtualTour} />
             <Route path='/stores' component={OnlineStore} />
+            <Route path="/circuits" component={MenuCircuit} />
 
 
             </Switch>

@@ -85,7 +85,7 @@ const MainLanding=()=>{
                                             <img src="img/nap1.jpg" alt="" className="image-cover" />
                                         </div>
                                     </div>
-                                    <div className="_title"><span>Excursions</span></div>
+                                    <div className="_title"><span><NavLink to="execursions">Execursions</NavLink></span></div>
                                 </a>
                                 <a  className="categories_item">
                                     <div className="icon">

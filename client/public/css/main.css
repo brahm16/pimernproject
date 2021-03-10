@@ -3693,7 +3693,7 @@ body {
     min-height: 685px;
   }
 }
-@media screen (orientation: portrait) and (max-width: 1050px) and (-webkit-min-device-pixel-ratio: 0) {
+@media screen and (orientation: portrait) and (max-width: 1050px) and (-webkit-min-device-pixel-ratio: 0) {
   .slider-container {
     height: 85vh;
   }
