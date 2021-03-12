@@ -1211,7 +1211,6 @@ body {
 .search_tour {
   position: relative;
   padding-bottom: 60px;
-  background: #F7F7F7;
 }
 .search_tour .section_title {
   max-width: 520px;
@@ -1221,7 +1220,6 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: #000;
   content: '';
   position: absolute;
 }

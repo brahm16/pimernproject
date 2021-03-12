@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MainLanding from "./MainLanding";
+import Places from "./pages/Places";
 import Search from "./Search";
 
 
@@ -12,6 +13,7 @@ export default class Landing extends Component {
       <>
           <MainLanding />
           <Search />
+          <Places />
 
         {/*
          <div className="most_popular__section mainpage-slider">
