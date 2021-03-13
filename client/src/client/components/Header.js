@@ -12,6 +12,11 @@ import {
 
 import { NavLink } from "react-router-dom";
 import Search from "./Search";
+import { logoutUser } from "../../actions/authActions";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Login from "../../auth/Login";
+
 
 class Header extends Component {
   
@@ -27,6 +32,10 @@ class Header extends Component {
     this.handleLogin = this.handleLogin.bind(this);
     this.toggleSearchModal = this.toggleSearchModal.bind(this);
   }
+  onLogoutClick = e => {
+    e.preventDefault();
+    this.props.logoutUser();
+  };
   toggleModal() {
     this.setState({
       isModalOpen: !this.state.isModalOpen,
@@ -51,6 +60,8 @@ class Header extends Component {
     event.preventDefault();
   }
   render() {
+    const { user } = this.props.auth;
+
     return (
       <div className="header">
         <div className="wrap">
@@ -61,6 +72,10 @@ class Header extends Component {
               </div>
               <div className="email">
                 <a href="mailto:zaghouan@gmail.com">zaghouan@gmail.com</a>
+                {
+                          user? (<a style={{color: "white",marginLeft:"16px"}} onClick={this.onLogoutClick}>{user.name}</a>): (
+                            "")
+                        }
               </div>
               <div className="socials">
                 <a href="#" className="a facebook"></a>
@@ -89,7 +104,10 @@ class Header extends Component {
               <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                 <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                 <ModalBody>
-                  <Form onSubmit={this.handleLogin}>
+                  {
+                    <Login />
+                    /* 
+                    <Form onSubmit={this.handleLogin}>
                     <FormGroup>
                       <Label htmlFor="username">Username</Label>
                       <Input
@@ -122,6 +140,9 @@ class Header extends Component {
                       Login
                     </Button>
                   </Form>
+                    */
+                  }
+                  
                 </ModalBody>
               </Modal>
 
@@ -147,10 +168,21 @@ class Header extends Component {
                         <NavLink to="/contact">Contact</NavLink>
                       </li>
                       <li className="dropdown_li">
-                        <a onClick={this.toggleModal}>
-                          <span>Login</span>
-                        </a>
+                       
+                        
                       </li>
+                      <li className="dropdown_li">
+                        {
+                          user.name ?
+                          (""):
+                          (
+                            <a onClick={this.toggleModal}>
+                            <span>Login</span>
+                          </a> 
+                          )
+                        }
+                                          </li>
+                     
                     </ul>
                   </div>
                   <div className="bottom">
@@ -188,5 +220,16 @@ class Header extends Component {
     );
   }
 }
+Header.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
 
-export default Header;
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser }
+)(Header);

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink,Link } from "react-router-dom"
 
 const MainLanding=()=>{
     const style={
@@ -20,7 +20,7 @@ const MainLanding=()=>{
                       
                       <div className="slide__controls">
                           <a href="single.html" className="btn">Want a personal tour</a>
-                          <a href="tour-list.html" className="btn btn__choose_tour">Choose tour</a>
+                          <Link to="circuits" className="btn btn__choose_tour"  >Choose tour</Link>
                       </div>
                     </div>
                   </div>
