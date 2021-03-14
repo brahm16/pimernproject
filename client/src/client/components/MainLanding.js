@@ -1,6 +1,12 @@
 import { NavLink,Link } from "react-router-dom"
+import { withTranslation } from 'react-i18next';
+import React, { Component } from 'react';
 
-const MainLanding=()=>{
+
+class MainLanding extends Component{
+  render(){
+    const {t} = this.props
+
     const style={
       
         backgroundImage: "url('img/slide1.jpg')"
@@ -19,7 +25,7 @@ const MainLanding=()=>{
                     <div className="slide__text">
                       
                       <div className="slide__controls">
-                          <a href="single.html" className="btn">Want a personal tour</a>
+                          <a href="single.html" className="btn">{t('exemple1')}</a>
                           <Link to="circuits" className="btn btn__choose_tour"  >Choose tour</Link>
                       </div>
                     </div>
@@ -122,6 +128,9 @@ const MainLanding=()=>{
             
        </div>
     )
+
+  }
+  
 }
 
-export default MainLanding;
+export default  withTranslation()(MainLanding);

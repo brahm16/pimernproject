@@ -53,21 +53,23 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container">
+      <div className="page_content single-page about-page contacts-page">
+      <div className="content-head">
+          <div className="wrap">
+              <div className="wrap_float">
+                  <div className="main">
+                      <div className="title">
+                          Register
+                      </div>
+                      
+              <div className="row row-content">
+                
+                  <div className="col-12 col-md-9">
+      <div >
         <div className="row">
           <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
-              </p>
-            </div>
+           
+           
             <form noValidate onSubmit={this.onSubmit}>
               <div className="input-field col s12">
                 <input
@@ -75,16 +77,17 @@ class Register extends Component {
                   value={this.state.name}
                   error={errors.name}
                   id="name"
+                  placeholder="Name"
                   type="text"
                   className={classnames("", {
                     invalid: errors.name
                   })}
                 />
-                <label htmlFor="name">Name</label>
                 <span className="red-text">{errors.name}</span>
               </div>
               <div className="input-field col s12">
                 <input
+                  placeholder="Email"
                   onChange={this.onChange}
                   value={this.state.email}
                   error={errors.email}
@@ -94,11 +97,11 @@ class Register extends Component {
                     invalid: errors.email
                   })}
                 />
-                <label htmlFor="email">Email</label>
                 <span className="red-text">{errors.email}</span>
               </div>
               <div className="input-field col s12">
                 <input
+                  placeholder="Password"
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
@@ -108,11 +111,11 @@ class Register extends Component {
                     invalid: errors.password
                   })}
                 />
-                <label htmlFor="password">Password</label>
                 <span className="red-text">{errors.password}</span>
               </div>
               <div className="input-field col s12">
                 <input
+                placeholder="Confirm password"
                   onChange={this.onChange}
                   value={this.state.password2}
                   error={errors.password2}
@@ -122,7 +125,6 @@ class Register extends Component {
                     invalid: errors.password2
                   })}
                 />
-                <label htmlFor="password2">Confirm Password</label>
                 <span className="red-text">{errors.password2}</span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -140,9 +142,23 @@ class Register extends Component {
                 </button>
               </div>
             </form>
+            <div className="col s12" style={{ paddingLeft: "11.250px" ,color:"white" }}>
+              
+              <p className="grey-text text-darken-1">
+                Already have an account? <Link to="/login">Log in</Link>
+              </p>
+            </div>
           </div>
         </div>
       </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      
     );
   }
 }

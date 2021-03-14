@@ -9,6 +9,8 @@ import {
   Input,
   Label,
 } from "reactstrap";
+import { useTranslation } from 'react-i18next';
+
 
 import { NavLink } from "react-router-dom";
 import Search from "./Search";
@@ -16,10 +18,12 @@ import { logoutUser } from "../../actions/authActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Login from "../../auth/Login";
+import { withTranslation } from 'react-i18next';
+import LanguageSelect from "./LanguageSelect";
 
 
 class Header extends Component {
-  
+
 
   constructor(props) {
     super(props);
@@ -61,6 +65,8 @@ class Header extends Component {
   }
   render() {
     const { user } = this.props.auth;
+    const {t} = this.props
+
 
     return (
       <div className="header">
@@ -76,6 +82,12 @@ class Header extends Component {
                           user? (<a style={{color: "white",marginLeft:"16px"}} onClick={this.onLogoutClick}>{user.name}</a>): (
                             "")
                         }
+              </div>
+              <div className="email" >
+                <div >
+                <LanguageSelect />
+
+                </div>
               </div>
               <div className="socials">
                 <a href="#" className="a facebook"></a>
@@ -153,7 +165,7 @@ class Header extends Component {
                   <div className="scroll_wrap">
                     <ul>
                       <li>
-                        <NavLink to="/home"> Home</NavLink>
+                        <NavLink to="/home"> {t('exemple')}</NavLink>
                       </li>
                       <li className="dropdown_li">
                         <NavLink to="/about"> About</NavLink>
@@ -232,4 +244,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logoutUser }
-)(Header);
+)(withTranslation()(Header));

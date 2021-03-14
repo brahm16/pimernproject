@@ -17,6 +17,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 
 
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -45,6 +46,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <BrowserRouter>
+
           <div>
             <Header />
             <Route exact path="/home" component={HomePage} />
